@@ -1,24 +1,21 @@
 import React from 'react';
-import styled from 'styled-components';
-import Filler from '../Filler/Filler';
+import Spritesheet from 'react-responsive-spritesheet';
 
 
 const ProgressBar = ({ precentage }) => {
 
     return (
-        <Box>
-            <Filler precentage={precentage} />
-        </Box>
+        <Spritesheet image={`/images/loader2.png`}
+            widthFrame={360}
+            heightFrame={360}
+            steps={12}
+            fps={12}
+            direction={'forward'}
+            timeout={1800}
+            loop={true}
+            style={{ height: '100%' }}
+        />
     )
 };
 
 export default ProgressBar;
-
-const Box = styled.div`
-position: relative;
-height: 20px;
-width: 350px;
-border-radius: 50px;
-border: 1px solid #333;
-
-`;
